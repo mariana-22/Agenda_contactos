@@ -1,0 +1,25 @@
+{
+  "name": "agenda_contactos-1",
+  "version": "1.0.0",
+  "main": "Mariana.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariana-22/Agenda_contactos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariana-22/Agenda_contactos/issues"
+  },
+  "homepage": "https://github.com/mariana-22/Agenda_contactos#readme",
+  "description": "",
+  "dependencies": {
+    "@inquirer/prompts": "^7.8.4"
+  }
+}
