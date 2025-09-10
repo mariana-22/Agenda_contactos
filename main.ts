@@ -14,15 +14,15 @@ while (true) {
         choices: [{ name: 'Agregar contacto', value: 'agregar' },
         { name: 'Actualizar contacto', value: 'actualizar' },
         { name: 'Mostrar contactos', value: 'mostrar' },
-        { name: 'Salir', value: 'salir' }],
+        { name: 'Salir', value: 'salir' },
+        { name: 'Borrar contacto', value: 'borrar' }],
     });
     switch (opcion) {
         case "agregar":
-            const id = await input({ message: 'Ingrese ID:' });
             const nombre = await input({ message: 'Ingrese Nombre:' });
             const telefono = await input({ message: 'Ingrese Teléfono:' });
             const email = await input({ message: 'Ingrese Email:' });
-            const nuevoContacto = new Contacto(Number(id), nombre, Number(telefono), email);
+            const nuevoContacto = new Contacto(nombre, Number(telefono), email);
             agenda.push(nuevoContacto);
             console.log('Contacto agregado exitosamente.');
             break;
@@ -33,15 +33,37 @@ while (true) {
                 console.log('Contactos en la agenda:');
                 console.table(
                     agenda.map((contacto) => ({
-                        ID: contacto.id,
-                        Nombre: contacto.nombre,
+                    Nombre: contacto.nombre,
                         Teléfono: contacto.telefono,
                         Email: contacto.email
-                    }))
+                    })) 
                 );
             }
             break;
-        default:
+            case "actualizar":
+            const id = await input({ message: 'Ingrese ID A actualizar:' });
+            const nombre2 = await input({ message: 'Ingrese Nombre:' });
+            const telefono2= await input({ message: 'Ingrese Teléfono:' });
+            const email2= await input({ message: 'Ingrese Email:' });
+            const index = agenda.findIndex((contacto, i) => i === Number(id));
+            if (index !== -1) {
+                agenda[index].actualizarContacto(nombre2, Number(telefono2), email2);
+            } else {
+                console.log('Contacto no encontrado.');
+            }
+            break;
+            case "borrar":
+            const id3 = await input({ message: 'Ingrese ID borrar:' });
+            const index3 = agenda.findIndex((contacto, i) => i === Number(id3));
+            if (index3 !== -1) {
+                agenda.splice(index3, 1);
+                console.log('Contacto borrado exitosamente.');
+            } else {
+                console.log('Contacto no encontrado.');
+            }
+            break;
+        case "salir":
+            console.log('Saliendo de la agenda.');
             break;
     }
 

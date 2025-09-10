@@ -1,17 +1,14 @@
 
-    type id= number
     type nombre=string
     type telefono=number
     type email=string
 
 export class Contacto {
-        id:id;
         nombre:nombre;
         telefono:telefono;
         email:email;
 
-    constructor(id:id, nombre:nombre, telefono:telefono, email:email){
-        this.id=id;
+    constructor(nombre:nombre, telefono:telefono, email:email){
         this.nombre=nombre;
         this.telefono=telefono;
         this.email=email;
@@ -24,7 +21,7 @@ export class Contacto {
     }
 
     mostrarContacto(): string {
-        return `ID: ${this.id}, Nombre: ${this.nombre}, Teléfono: ${this.telefono}, Email: ${this.email}`;
+        return `Nombre: ${this.nombre}, Teléfono: ${this.telefono}, Email: ${this.email}`;
     }
 }
 
