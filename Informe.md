@@ -31,6 +31,16 @@ Este proyecto permite manejar un sistema simple de gestión de contactos, con fu
 **Refactor propuesto (opcional)**  
 Separar validación y otras funcionalidades en clases externas para mantener la clase `Contacto` abierta a extensión sin modificar su código base.
 
----
+**Conclusiones**
+En el analisis realiazado identificamos las siguinetes conclusiones principales:
+*Cumplimiento de principios de responsabilidad unsica:*
+La clase analizda de contactos cumple adecuadamnete con SRP,ya que cada una esta enfocada en una unica responsabilidad bien definida:manejo de datos 
+y persistencia respectivamente 
+*Cumplimiento parcial del principios abierto/cerrado:*
+La clase contacto es relativamente facil de extender sin modidficarl,aunque no implementa explicitamente interfaces o patrones para extensión ,lo cual es 
+aceptable dado a asu nivel de simplicidad.
+**Posibles soluciones**
+La clase Contacto puede mantenerse tal cual o mejorarse a futuro mediante composición para funcionalidades adicionales, sin ser urgente.
+Este enfoque facilitará la mantenibilidad, escalabilidad y calidad del proyecto a mediano y largo plazo.
 
 
