@@ -33,7 +33,9 @@ Separar validación y otras funcionalidades en clases externas para mantener la 
 
 **Conclusiones**
 En el analisis realiazado identificamos las siguinetes conclusiones principales:
-*Cumplimiento de principios de responsabilidad unsica:*
+*Cumplimiento de principios de responsabilidad unica:*
+
+
 La clase analizda de contactos cumple adecuadamnete con SRP,ya que cada una esta enfocada en una unica responsabilidad bien definida:manejo de datos 
 y persistencia respectivamente 
 
