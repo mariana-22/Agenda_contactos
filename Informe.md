@@ -1,6 +1,6 @@
 
 # Informe de  agenda de contactos.
-## Clases utilizadas - Contactos
+## Clases utilizadas - Contacto
 
 
 
@@ -10,12 +10,12 @@ Este proyecto permite manejar un sistema simple de gestión de contactos, con fu
 
 ## 2. Inventario de Clases Analizadas
 
-- Clase 1: `mariana.ts` — Representa un contacto con sus datos básicos y métodos para actualizar y mostrar la información.
+- Clase 1: `Contacto` — Representa un contacto con sus datos básicos y métodos para actualizar y mostrar la información.
 
 
 ## 3. Análisis por Clase
 
-### 3.1 `mariana.ts`  
+### 3.1 `Contacto`  
 **Responsabilidad declarada:** Representar un contacto con sus datos y métodos para actualizar y mostrar su información.
 
 **S (Single Responsibility)**  
