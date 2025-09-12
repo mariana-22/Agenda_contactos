@@ -1,4 +1,4 @@
-import { Contacto } from "./Mariana.ts"
+import { Contacto } from "./Contacto.ts"
 import { input, select } from '@inquirer/prompts';
 /*let contacto1= new contacto (1,"sara",123456789,"saramartinez05@gmail.com")
 console.log(contacto1.mostrarContacto());
