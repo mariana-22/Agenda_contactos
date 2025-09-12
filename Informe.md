@@ -1,6 +1,6 @@
 
 # Informe de  agenda de contactos.
-
+## clases utilizadas - Contactos
 
 ## 1. Principio de Responsabilidad Única (SRP)
 
@@ -20,8 +20,17 @@ La clase `Contacto` tiene una única responsabilidad: representar y gestionar la
 3. **Documentación:** Añadir comentarios de documentación para mejorar la mantenibilidad.
 4. **Extensibilidad:** Preparar la clase para futuras extensiones usando interfaces o herencia si se requieren más tipos de contactos.
 
-## 3. Conclusiones
+## 3.concluison
 
 La clase `Contacto` cumple con el principio de responsabilidad única (SRP). Implementar las recomendaciones sugeridas puede mejorar la robustez, seguridad y escalabilidad del código.
+
+## 4. Posibles Cambios de Mejora
+
+1. *Validaciones:* Agregar validaciones para los datos (por ejemplo, formato de email, longitud del teléfono).
+2. *Privacidad:* Usar modificadores de acceso como private para proteger los atributos y exponer getters/setters si es necesario.
+3. *Documentación:* Añadir comentarios de documentación para mejorar la mantenibilidad.
+4. *Extensibilidad:* Preparar la clase para futuras extensiones usando interfaces o herencia si se requieren más tipos de contactos.
+
+
 
  
