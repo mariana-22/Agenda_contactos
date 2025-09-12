@@ -14,7 +14,7 @@
 - main.ts → Lógica de la agenda:
   - Almacena los contactos en un arreglo
   - Gestiona el menú interactivo
-  - Controla las operaciones CRUD (Crear, Leer, Actualizar, Borrar)
+  - Controla las operaciones CRUD (Agregar, Actualizar, Mostrar, Borrar,Salir)
 
 ---
 
