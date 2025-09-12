@@ -2,7 +2,21 @@
 # Informe de  agenda de contactos.
 ## Clases utilizadas - Contacto
 
+##  Tecnologías utilizadas
+- *TypeScript* (programación tipada en JavaScript)
+- *Node.js*
+- *@inquirer/prompts* → Librería para mostrar menús y entradas interactivas en la consola
 
+---
+
+##  Estructura del código
+- Contacto.ts → Define la clase Contacto y sus métodos.
+- main.ts → Lógica de la agenda:
+  - Almacena los contactos en un arreglo
+  - Gestiona el menú interactivo
+  - Controla las operaciones CRUD (Crear, Leer, Actualizar, Borrar)
+
+---
 
 ## 1. Contexto
 
