@@ -1,27 +1,36 @@
 
 # Informe de  agenda de contactos.
+## Clases utilizadas - Contacto
 
 
-## 1. Principio de Responsabilidad Única (SRP)
 
-### A nivel de clase
-La clase `Contacto` tiene una única responsabilidad: representar y gestionar la información de un contacto. Esto facilita su comprensión y mantenimiento.
+## 1. Contexto
 
-### A nivel de métodos
+Este proyecto permite manejar un sistema simple de gestión de contactos, con funcionalidades para crear, actualizar y mostrar información, así como para persistir datos en almacenamiento local o base de datos.
 
-- **constructor:** Su única responsabilidad es inicializar los atributos del contacto. Cumple con SRP.
-- **actualizarContacto:** Su responsabilidad es actualizar todos los datos del contacto. Cumple con SRP, aunque podría dividirse si se requieren actualizaciones parciales.
-- **mostrarContacto:** Su responsabilidad es mostrar la información del contacto en formato de texto. Cumple con SRP.
+## 2. Inventario de Clases Analizadas
 
-## 2. Posibles Cambios de Mejora
+- Clase 1: `Contacto` — Representa un contacto con sus datos básicos y métodos para actualizar y mostrar la información.
 
-1. **Validaciones:** Agregar validaciones para los datos (por ejemplo, formato de email, longitud del teléfono).
-2. **Privacidad:** Usar modificadores de acceso como `private` para proteger los atributos y exponer getters/setters si es necesario.
-3. **Documentación:** Añadir comentarios de documentación para mejorar la mantenibilidad.
-4. **Extensibilidad:** Preparar la clase para futuras extensiones usando interfaces o herencia si se requieren más tipos de contactos.
 
-## 3. Conclusiones
+## 3. Análisis por Clase
 
-La clase `Contacto` cumple con el principio de responsabilidad única (SRP). Implementar las recomendaciones sugeridas puede mejorar la robustez, seguridad y escalabilidad del código.
+### 3.1 `Contacto`  
+**Responsabilidad declarada:** Representar un contacto con sus datos y métodos para actualizar y mostrar su información.
 
- 
+**S (Single Responsibility)**  
+- **Diagnóstico:** Cumple  
+- **Justificación:** La clase está enfocada únicamente en modelar el contacto y operaciones básicas sobre sus datos. No mezcla responsabilidades de persistencia ni validación externa.  
+- **Riesgo si se mantiene así:** Bajo, mantiene cohesión y facilidad para pruebas unitarias.
+
+**O (Open/Closed)**  
+- **Diagnóstico:** Cumple parcialmente  
+- **Justificación:** La clase es simple y permite extenderla mediante herencia o composición, aunque no implementa interfaces ni patrones específicos para extensión sin modificarla. Dada su simplicidad, esto no representa un problema inmediato.  
+- **Propuesta:** Para futuras funcionalidades como validación o formatos especiales, usar composición para evitar modificar la clase.
+
+**Refactor propuesto (opcional)**  
+Separar validación y otras funcionalidades en clases externas para mantener la clase `Contacto` abierta a extensión sin modificar su código base.
+
+---
+
+
