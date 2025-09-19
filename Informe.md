@@ -75,6 +75,8 @@ Este proyecto es una agenda interactiva desarrollada en TypeScript que permite a
 ## L - (Principio de sustitución de Liskov)
 
 ¿Qué es?
+
+
 Este principio establece que si una clase hija hereda de una clase padre, debe poder reemplazarla en cualquier parte del código sin que el sistema se rompa o cambie su comportamiento esperado.
 
 ¿Se cumple en  el código?
