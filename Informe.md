@@ -64,3 +64,96 @@ La clase Contacto puede mantenerse tal cual o mejorarse a futuro mediante compos
 Este enfoque facilitará la mantenibilidad, escalabilidad y calidad del proyecto a mediano y largo plazo.
 
 
+#  Informe 2 SOLID
+
+Este proyecto es una agenda interactiva desarrollada en TypeScript que permite agregar, actualizar, mostrar y eliminar contactos mediante un menú interactivo en consola usando `@inquirer/prompts`.
+
+---
+
+##  ¿Se aplica el Principio de Agregación de Interfaces (ISP)?
+
+###  No se aplica directamente.
+
+### **¿Por qué?**
+
+El código actual no utiliza interfaces segmentadas para separar responsabilidades. Solo hay una clase principal (Contacto) que agrupa todos los datos y comportamientos relacionados con un contacto. Además, no existen diferentes tipos de contactos (por ejemplo, personales, empresariales, de emergencia) que requieran implementar distintas interfaces.
+
+Aunque el código no está violando el principio (porque no se obliga a ninguna clase a implementar métodos innecesarios), tampoco lo está aplicando explícitamente, ya que no hay uso de interfaces específicas.
+
+---
+
+##  ¿Cuál sería una posible solución para aplicar el ISP?
+
+Podríamos dividir las responsabilidades del contacto en varias interfaces pequeñas y especializadas, de manera que las clases implementen únicamente lo que necesitan.
+
+###  Ejemplo propuesto:
+
+```ts
+// Interfaces separadas
+interface IContactoBase {
+    nombre: string;
+    telefono: number;
+    email: string;
+    actualizarContacto(nombre: string, telefono: number, email: string): void;
+}
+
+interface IContactoEmpresarial {
+    empresa: string;
+    cargo: string;
+}
+
+interface IContactoEmergencia {
+    relacionEmergencia: string;
+}
+_
+```
+###  Implementacones separadas:
+
+```ts
+// Contacto personal
+class ContactoPersonal implements IContactoBase {
+    constructor(public nombre: string, public telefono: number, public email: string) {}
+
+    actualizarContacto(nombre: string, telefono: number, email: string): void {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+    }
+}
+
+// Contacto empresarial
+class ContactoEmpresarial implements IContactoBase, IContactoEmpresarial {
+    constructor(
+        public nombre: string,
+        public telefono: number,
+        public email: string,
+        public empresa: string,
+        public cargo: string
+    ) {}
+
+    actualizarContacto(nombre: string, telefono: number, email: string): void {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+    }
+}
+
+// Contacto de emergencia
+class ContactoEmergencia implements IContactoBase, IContactoEmergencia {
+    constructor(
+        public nombre: string,
+        public telefono: number,
+        public email: string,
+        public relacionEmergencia: string
+    ) {}
+
+    actualizarContacto(nombre: string, telefono: number, email: string): void {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+    }
+}
+
+
+
+
