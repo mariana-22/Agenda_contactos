@@ -72,7 +72,7 @@ Este enfoque facilitará la mantenibilidad, escalabilidad y calidad del proyecto
 Este proyecto es una agenda interactiva desarrollada en TypeScript que permite agregar, actualizar, mostrar y eliminar contactos mediante un menú interactivo en consola usando `@inquirer/prompts`.
 
 ---
-## L — (Principio de sustitución de Liskov)
+## L - (Principio de sustitución de Liskov)
 
 ¿Qué es?
 Este principio establece que si una clase hija hereda de una clase padre, debe poder reemplazarla en cualquier parte del código sin que el sistema se rompa o cambie su comportamiento esperado.
