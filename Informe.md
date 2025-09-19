@@ -158,6 +158,84 @@ class ContactoEmergencia implements IContactoBase, IContactoEmergencia {
     }
 }
 
+````
+---
+## D (Dependency Inversion Principle (DIP))
 
+Nuestro codigo no aplica con este principio
 
+### ¿Por que?
+
+El Principio de inversion de dependencias dice:
+
+  1. Los módulos de alto nivel (la lógica principal) no deben depender de implementaciones concretas, sino de abstracciones (interfaces o clases abstractas).
+
+  2. Las implementaciones concretas deben depender de esas abstracciones.
+
+En otras palabras: el programa no debería estar atado a una librería o a una clase específica, sino que debería poder cambiar fácilmente la forma en que obtiene datos, los guarda o interactúa con el usuario.
+
+### En nuestro codifo actual
+
+En `main.ts` pasa esto:
+1. Dependencia directa de `@inquirer/prompts`
+    El menú depende directamente de la librería para recibir datos del usuario.
+    Si mañana queremas hacer una interfaz gráfica, web o usar otra librería, tendrías que reescribir gran parte de `main.ts` .
+
+2. Dependencia directa de Contacto
+     El CRUD trabaja con un array en memoria y directamente con la clase Contacto.
+     Si mañana queremos guardar contactos en un archivo JSON, en una base de datos o en una API, tenemos que modificar main.ts.
+
+## ¿Como soluacionarlo?
+
+La idea es introducir interfaces que actúen como capa de abstracción. Ejemplo:
+
+1. Crear una interfaz para el almacenamiento
+   
+```ts
+interface IRepositorioContactos {
+  agregar(contacto: Contacto): void;
+  listar(): Contacto[];
+  actualizar(indice: number, contacto: Contacto): void;
+  eliminar(indice: number): void;
+}
+````
+
+3. Implementar la versión en memoria
+  
+```ts
+class RepositorioMemoria implements IRepositorioContactos {
+  private contactos: Contacto[] = [];
+
+  agregar(contacto: Contacto): void {
+    this.contactos.push(contacto);
+  }
+
+  listar(): Contacto[] {
+    return this.contactos;
+  }
+
+  actualizar(indice: number, contacto: Contacto): void {
+    this.contactos[indice] = contacto;
+  }
+
+  eliminar(indice: number): void {
+    this.contactos.splice(indice, 1);
+  }
+}
+```
+
+3. En main.ts, depender de la abstracción
+   
+```ts
+let repositorio: IRepositorioContactos = new RepositorioMemoria();
+````
+
+## Beneficios
+
+  1. El sistema queda más flexible y escalable.
+
+  2. Podemos reemplazar la forma de almacenar o mostrar datos sin modificar la lógica principal.
+
+  3. Así logramos que tanto los módulos de alto nivel `main.ts` como los de bajo nivel dependan de una abstracción común.
+ ---
 
