@@ -77,7 +77,7 @@ Este proyecto es una agenda interactiva desarrollada en TypeScript que permite a
 ¿Qué es?
 Este principio establece que si una clase hija hereda de una clase padre, debe poder reemplazarla en cualquier parte del código sin que el sistema se rompa o cambie su comportamiento esperado.
 
-¿Se cumple en tu código?
+¿Se cumple en  el código?
 Sí se cumple, pero de manera trivial.
 
 ```ts
