@@ -81,12 +81,42 @@ Este principio establece que si una clase hija hereda de una clase padre, debe p
 Sí se cumple, pero de manera trivial.
 
 ```ts
+ type nombre=string
+    type telefono=number
+    type email=string
 
+export class Contacto {
+        nombre:nombre;
+        telefono:telefono;
+        email:email;
+
+    constructor(nombre:nombre, telefono:telefono, email:email){
+        this.nombre=nombre;
+        this.telefono=telefono;
+        this.email=email;
+        
+    }
+    actualizarContacto(nombre: nombre, telefono: telefono, email: email): void {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.email = email;
+    }
+
+    mostrarContacto(): string {
+        return `Nombre: ${this.nombre}, Teléfono: ${this.telefono}, Email: ${this.email}`;
+    }
+}
+
+
+
+
+
+/**primero crear type, despues crear la clase agenda y atributo contacto privado despues agregar contactos */
 ````
 
 
 ¿Por qué?
-En tu código solo existe la clase Contacto y no hay hijas que hereden de ella. Esto significa que no existe riesgo de incumplir LSP. La agenda funciona con objetos Contacto, y si en un futuro crearas una subclase como ContactoConDireccion, esta debería poder usarse en lugar de Contacto sin romper nada.
+En el  código solo existe la clase Contacto y no hay hijas que hereden de ella. Esto significa que no existe riesgo de incumplir LSP. La agenda funciona con objetos Contacto, y si en un futuro crearas una subclase como ContactoConDireccion, esta debería poder usarse en lugar de Contacto sin romper nada.
 
 ##  I (Principio de Agregación de Interfaces (ISP))
 
