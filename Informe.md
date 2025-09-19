@@ -65,6 +65,7 @@ aceptable dado a asu nivel de simplicidad.
 La clase Contacto puede mantenerse tal cual o mejorarse a futuro mediante composición para funcionalidades adicionales, sin ser urgente.
 Este enfoque facilitará la mantenibilidad, escalabilidad y calidad del proyecto a mediano y largo plazo.
 
+---
 
 ## Informe 2 LID
 
