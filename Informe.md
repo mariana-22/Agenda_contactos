@@ -80,6 +80,8 @@ Este proyecto es una agenda interactiva desarrollada en TypeScript que permite a
 Este principio establece que si una clase hija hereda de una clase padre, debe poder reemplazarla en cualquier parte del código sin que el sistema se rompa o cambie su comportamiento esperado.
 
 ¿Se cumple en  el código?
+
+
 Sí se cumple, pero de manera trivial.
 
 ```ts
@@ -118,6 +120,8 @@ export class Contacto {
 
 
 ¿Por qué?
+
+
 En el  código solo existe la clase Contacto y no hay hijas que hereden de ella. Esto significa que no existe riesgo de incumplir LSP. La agenda funciona con objetos Contacto, y si en un futuro crearas una subclase como ContactoConDireccion, esta debería poder usarse en lugar de Contacto sin romper nada.
 
 ##  I (Principio de Agregación de Interfaces (ISP))
