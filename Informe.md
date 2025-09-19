@@ -27,17 +27,19 @@ Este proyecto permite manejar un sistema simple de gestión de contactos, con fu
 - Clase 1: `Contacto` — Representa un contacto con sus datos básicos y métodos para actualizar y mostrar la información.
 
 
-## 3. Análisis por Clase
+#3. Análisis por Clase
 
-### 3.1 `Contacto`  
+# 3.1 Informe 1 SO
+
+### `Contacto`  
 **Responsabilidad declarada:** Representar un contacto con sus datos y métodos para actualizar y mostrar su información.
 
-**S (Single Responsibility)**  
+##**S (Single Responsibility)**  
 - **Diagnóstico:** Cumple  
 - **Justificación:** La clase está enfocada únicamente en modelar el contacto y operaciones básicas sobre sus datos. No mezcla responsabilidades de persistencia ni validación externa.  
 - **Riesgo si se mantiene así:** Bajo, mantiene cohesión y facilidad para pruebas unitarias.
 
-**O (Open/Closed)**  
+##**O (Open/Closed)**  
 - **Diagnóstico:** Cumple parcialmente  
 - **Justificación:** La clase es simple y permite extenderla mediante herencia o composición, aunque no implementa interfaces ni patrones específicos para extensión sin modificarla. Dada su simplicidad, esto no representa un problema inmediato.  
 - **Propuesta:** Para futuras funcionalidades como validación o formatos especiales, usar composición para evitar modificar la clase.
@@ -64,15 +66,17 @@ La clase Contacto puede mantenerse tal cual o mejorarse a futuro mediante compos
 Este enfoque facilitará la mantenibilidad, escalabilidad y calidad del proyecto a mediano y largo plazo.
 
 
-#  Informe 2 SOLID
+#  Informe 2 LID
 
 Este proyecto es una agenda interactiva desarrollada en TypeScript que permite agregar, actualizar, mostrar y eliminar contactos mediante un menú interactivo en consola usando `@inquirer/prompts`.
 
 ---
 
-##  ¿Se aplica el Principio de Agregación de Interfaces (ISP)?
+##  I (Principio de Agregación de Interfaces (ISP))
 
-###  No se aplica directamente.
+### ¿Se aplica el Principio de Agregacion de Interfaces?
+
+No se aplica directamente.
 
 ### **¿Por qué?**
 
