@@ -119,10 +119,21 @@ export class Contacto {
 ````
 
 
-¿Por qué?
+1. ¿Una subclase o implementación de interfaz puede reemplazar a su padre sin romper el programa?
+   
+
+Sí, en el  código actual solo existe la clase Contacto, pero si en el futuro se crea una subclase, mientras respete los mismos métodos (actualizarContacto, mostrarContacto), podrá sustituir a Contacto en la agenda sin romper el programa.
 
 
-En el  código solo existe la clase Contacto y no hay hijas que hereden de ella. Esto significa que no existe riesgo de incumplir LSP. La agenda funciona con objetos Contacto, y si en un futuro crearas una subclase como ContactoConDireccion, esta debería poder usarse en lugar de Contacto sin romper nada.
+2. ¿Existen violaciones (métodos no implementados, excepciones lanzadas arbitrariamente, contratos rotos)?
+   
+
+No, todos los métodos están implementados correctamente, no se lanzan excepciones inesperadas y los contratos se cumplen (actualizar realmente actualiza y mostrar siempre devuelve un string).
+
+3. Si no cumple, ¿cómo se podría reorganizar la jerarquía?
+
+
+En este caso sí cumple, pero para hacerlo más robusto en el futuro se puede crear una interfaz o clase abstracta que defina el contrato de Contacto. Así cualquier subclase (por ejemplo ContactoVIP) deberá implementar los mismos métodos y podrá usarse sin problemas, manteniendo el principio de Liskov.
 
 ##  I (Principio de Agregación de Interfaces (ISP))
 
